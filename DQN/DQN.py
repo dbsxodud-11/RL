@@ -105,7 +105,9 @@ class DQNAgent(nn.Module) :
 
     def update_target(self) :
 
-        update_model(self.main_network, self.target_network, tau=0.05)
+        #update_model(self.main_network, self.target_network, tau=0.05)
+        #DQN은 soft update가 아니라 hard update
+        update_model(self.main_network, self.target_network, tau=1.0)
 
 def main_DQN():
 
